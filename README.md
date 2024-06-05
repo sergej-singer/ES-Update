@@ -14,4 +14,4 @@ After you configured `config.ini` run commands in Command Line or PowerShell:
 * Enter VATSIM login data (Real Name, CID, Password, Rating)
 * Enter Hoppie code into every `TopSkyCPDLChoppieCode.txt`
 * Enter CID for VCCS, as well as VCCS Playback/Capture Devices and G2G PTT (For the time being all the configuration values for VCCS must be copied from already configured Euroscope Profile)
-* Change the size of fonts in symbology settings
+* Change the size of fonts in symbology and list settings
