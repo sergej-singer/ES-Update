@@ -1,7 +1,8 @@
 A small script for automatic entering of login data and some other settings after the sector update :)
 
 **How to run:**
-You'll need Python 3.12 or newer. In `config.ini` file you have to enter your login data. If you don't want to enter a particular data (for example Password), you can leave the field empty.
+
+Please backup your Sectorfile folder before runnung the script. You'll need Python 3.12 or newer. In `config.ini` file you have to enter your login data. If you don't want to enter a particular data (for example Password), you can leave the field empty.
 
 After you configured `config.ini` run commands in Command Line or PowerShell:
 
