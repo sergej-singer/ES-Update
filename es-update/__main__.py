@@ -50,26 +50,7 @@ def main(prog_name: str, *argv: str) -> None:
         }
     hoppie = config['LOGIN']['Hoppie']
     initials = config['LOGIN']['Initials']
-    size = config['SETTINGS']['TextSize']
-
-    attributes_session = {
-            'realname':	    False,
-            'certificate':	False,
-            'password':	    False,
-            'rating':	    False,
-            'server':	    False,
-            'tovatsim':	    False
-        }
-    attributes_vccs = {
-            'Ts3NickName':	    False,
-            'Ts3G2APtt':	    False,
-            'PlaybackMode':	    False,
-            'PlaybackDevice':	False,
-            'CaptureMode':	    False,
-            'CaptureDevice':	False
-
-        }
-       
+    size = config['SETTINGS']['TextSize']       
 
     for prff in args.es_path.rglob('*.prf'):
         print(f"Processing {prff}")
@@ -79,6 +60,24 @@ def main(prog_name: str, *argv: str) -> None:
         topsky_path: Path = None
         symbology_path: Path = None
         
+        attributes_session = {
+            'realname':	    False,
+            'certificate':	False,
+            'password':	    False,
+            'rating':	    False,
+            'server':	    False,
+            'tovatsim':	    False
+        }
+        attributes_vccs = {
+                'Ts3NickName':	    False,
+                'Ts3G2APtt':	    False,
+                'PlaybackMode':	    False,
+                'PlaybackDevice':	False,
+                'CaptureMode':	    False,
+                'CaptureDevice':	False
+
+            }
+
         with prff.open(encoding="iso-8859-1") as f:
             for line in csv.reader(f, delimiter="\t"):
                 if not line:
@@ -148,18 +147,14 @@ def add_attribute(
         ) -> list:
     """Returns list with added attributes and data."""
 
-    #if no line was given
     if not attribute_line:
         data.append([attribute_type1, attribute_type2, attribute])
         print(f"    Added {attribute_type2} with {data[-1][2]}")
         return data
 
-    #if line was given
     try:
-        #replaces existed data
         data[attribute_line][2] = attribute
     except:
-        #adds new data
         data[attribute_line].append(attribute)
 
     print(f"    Updated {attribute_type2} with {data[attribute_line][2]}")
