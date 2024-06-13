@@ -42,7 +42,7 @@ def main(prog_name: str, *argv: str) -> None:
         }
     vccs_data = {
             'Ts3NickName':	    config['LOGIN']['CID'],
-            'Ts3G2APtt':	    config['VCCS']['PTT'],
+            'Ts3G2GPtt':	    config['VCCS']['PTT'],
             'PlaybackMode':	    config['VCCS']['Mode'],
             'PlaybackDevice':	config['VCCS']['Playback'],
             'CaptureMode':	    config['VCCS']['Mode'],
@@ -70,7 +70,7 @@ def main(prog_name: str, *argv: str) -> None:
         }
         attributes_vccs = {
                 'Ts3NickName':	    False,
-                'Ts3G2APtt':	    False,
+                'Ts3G2GPtt':	    False,
                 'PlaybackMode':	    False,
                 'PlaybackDevice':	False,
                 'CaptureMode':	    False,
